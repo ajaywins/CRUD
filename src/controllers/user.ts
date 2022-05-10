@@ -80,7 +80,7 @@ let StudentDetailsById = async (req: Request, res: Response) => {
 }
 
 //deleteStudentDetails...
-
+// 
 let deleteStudentDetails = async (req: Request, res: Response) => {
     try {
         const deleteStudent = await store.findByIdAndDelete(req.params.id)
