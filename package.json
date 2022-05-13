@@ -17,9 +17,9 @@
   },
   "scripts": {
     "build": "tsc --jsx react --project . ",
-    "dev": "npm run build && node ./src/.dist/index.js",
+    "dev": "npm run build && node .dist/index.js",
     "start": "npm-watch dev",
-    "start-production": "node ./src/.dist/index.js",
+    "start-production": "node .dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "watch": {

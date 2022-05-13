@@ -1,13 +1,13 @@
 import {UserController}from '../controllers/user'
 import express from 'express';
 export const route = express.Router();
+import auth from '../middlewares/middleware'
 
 
-route.post('/create',UserController.newStudent);
-route.get('/getData',UserController.allStudentDetails);
-route.get('/getName/:name',UserController.StudentByName);
-route.get('/getDataBy/:id',UserController.StudentDetailsById);
+route.post('/create',auth,UserController.newStudent);
+route.get('/getAllData',UserController.getAllStudentDetails);
+route.get('/getDataBy/:name',UserController.StudentDetailsByname);
 route.delete('/delete/:id',UserController.deleteStudentDetails);
-route.patch('/updateDetails/:id',UserController.updateStudentDetails);
+// route.patch('/updateDetails/:id',UserController.updateStudentDetails);
 route.post('/login',UserController.loginUser);
 

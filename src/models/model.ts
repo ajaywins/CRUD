@@ -1,6 +1,7 @@
 import mongoose, { model } from "mongoose";
 import IUSER from "../interface/user/IUSER";
-
+import {Status} from '../utils/enums/enums'
+import {Role} from '../utils/enums/enums'
 
 export const schema = mongoose.Schema;
 
@@ -28,6 +29,17 @@ const studentSchema = new schema<IUSER>({
     password:{
         type:String,
         required:true
+    },
+    status:{
+        type :String,
+        enum:Status,
+        default:Status.ACTIVE,
+        
+    },
+    Role: {
+        type: String,
+        default: Role.User,
+        enum: Role,
     }
 
 })
